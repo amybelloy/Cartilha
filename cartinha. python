@@ -1,0 +1,106 @@
+# 📘 Cartilha Python para Iniciantes
+# Este código é um guia prático com exemplos comentados para iniciantes.
+
+# -----------------------------
+# 1. Olá, Mundo!
+# -----------------------------
+print("Olá, Mundo!")  # Exibe uma mensagem na tela
+
+# -----------------------------
+# 2. Variáveis e Tipos de Dados
+# -----------------------------
+nome = "Alice"        # String
+idade = 20            # Inteiro
+altura = 1.65         # Float
+tem_pet = True        # Booleano
+
+print("Nome:", nome)
+print("Idade:", idade)
+print("Altura:", altura)
+print("Tem pet?", tem_pet)
+
+# -----------------------------
+# 3. Entrada de Dados
+# -----------------------------
+# Comentado para não interromper a execução automática
+# nome_usuario = input("Digite seu nome: ")
+# print("Olá,", nome_usuario)
+
+# -----------------------------
+# 4. Condicionais
+# -----------------------------
+if idade >= 18:
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+
+# -----------------------------
+# 5. Laços de Repetição
+# -----------------------------
+# Laço for
+for i in range(5):
+    print("Contagem for:", i)
+
+# Laço while
+contador = 0
+while contador < 5:
+    print("Contagem while:", contador)
+    contador += 1
+
+# -----------------------------
+# 6. Listas
+# -----------------------------
+frutas = ["maçã", "banana", "laranja"]
+print("Frutas:", frutas)
+frutas.append("uva")  # Adiciona um item
+print("Nova lista:", frutas)
+
+# -----------------------------
+# 7. Funções
+# -----------------------------
+def saudacao(nome):
+    return f"Olá, {nome}!"
+
+print(saudacao("Bob"))
+
+# -----------------------------
+# 8. Dicionários
+# -----------------------------
+pessoa = {
+    "nome": "Carlos",
+    "idade": 30,
+    "cidade": "Rio de Janeiro"
+}
+print("Dicionário:", pessoa)
+print("Nome da pessoa:", pessoa["nome"])
+
+# -----------------------------
+# 9. Importando Bibliotecas
+# -----------------------------
+import math
+print("Raiz quadrada de 16:", math.sqrt(16))
+
+# -----------------------------
+# 10. Manipulação de Arquivos
+# -----------------------------
+# Criando e escrevendo em um arquivo
+with open("exemplo.txt", "w") as arquivo:
+    arquivo.write("Olá, arquivo!\n")
+    arquivo.write("Python é divertido!")
+
+# Lendo o arquivo
+with open("exemplo.txt", "r") as arquivo:
+    conteudo = arquivo.read()
+    print("Conteúdo do arquivo:")
+    print(conteudo)
+
+# -----------------------------
+# 11. Tratamento de Erros
+# -----------------------------
+try:
+    numero = int(input("Digite um número: "))
+    print("Você digitou:", numero)
+except ValueError:
+    print("Isso não é um número válido!")
+
+print("Fim da cartilha! 🎉")
