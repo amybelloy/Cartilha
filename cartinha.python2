@@ -1,0 +1,153 @@
+# 📘 Cartilha Python Intermediário
+# Exemplos de funções e ferramentas para quem já conhece o básico.
+
+# -----------------------------
+# 1. Funções com parâmetros opcionais e retornos
+# -----------------------------
+def saudacao(nome, mensagem="Seja bem-vindo!"):
+    """Função com parâmetro padrão"""
+    return f"Olá, {nome}! {mensagem}"
+
+print(saudacao("Alice"))
+print(saudacao("Bob", "Como você está hoje?"))
+
+# Função que retorna múltiplos valores
+def operacoes(a, b):
+    """Retorna soma, subtração, multiplicação e divisão"""
+    soma = a + b
+    sub = a - b
+    mult = a * b
+    div = a / b if b != 0 else None
+    return soma, sub, mult, div
+
+resultado = operacoes(10, 2)
+print("Resultados das operações:", resultado)
+
+# -----------------------------
+# 2. Listas avançadas e compreensão de listas
+# -----------------------------
+numeros = [1, 2, 3, 4, 5, 6]
+
+# Filtrar números pares usando list comprehension
+pares = [n for n in numeros if n % 2 == 0]
+print("Números pares:", pares)
+
+# Quadrado dos números
+quadrados = [n**2 for n in numeros]
+print("Quadrados:", quadrados)
+
+# -----------------------------
+# 3. Dicionários e iterações avançadas
+# -----------------------------
+alunos = {
+    "Alice": 8.5,
+    "Bob": 7.2,
+    "Carlos": 9.0
+}
+
+# Iterar sobre chaves e valores
+for nome, nota in alunos.items():
+    print(f"{nome} tem nota {nota}")
+
+# Criar dicionário invertido
+notas = {nota: nome for nome, nota in alunos.items()}
+print("Dicionário invertido:", notas)
+
+# -----------------------------
+# 4. Manipulação de arquivos avançada
+# -----------------------------
+# Adicionar linhas a um arquivo sem apagar o conteúdo
+with open("exemplo.txt", "a") as arquivo:
+    arquivo.write("\nAdicionando nova linha ao arquivo.")
+
+# Ler arquivo linha a linha
+with open("exemplo.txt", "r") as arquivo:
+    for linha in arquivo:
+        print("Linha do arquivo:", linha.strip())
+
+# -----------------------------
+# 5. Funções Lambda e Map/Filter/Reduce
+# -----------------------------
+from functools import reduce
+
+# Função lambda
+quadrado = lambda x: x**2
+print("Quadrado com lambda:", quadrado(5))
+
+# Map
+nums = [1, 2, 3, 4]
+quadrados = list(map(lambda x: x**2, nums))
+print("Map - Quadrados:", quadrados)
+
+# Filter
+pares = list(filter(lambda x: x % 2 == 0, nums))
+print("Filter - Pares:", pares)
+
+# Reduce
+soma_total = reduce(lambda a, b: a + b, nums)
+print("Reduce - Soma total:", soma_total)
+
+# -----------------------------
+# 6. Manipulação de strings avançada
+# -----------------------------
+texto = "Python é divertido"
+print("Upper:", texto.upper())
+print("Lower:", texto.lower())
+print("Split:", texto.split())
+print("Replace:", texto.replace("divertido", "incrível"))
+
+# -----------------------------
+# 7. Tratamento de erros avançado
+# -----------------------------
+try:
+    n = int(input("Digite um número para dividir 100: "))
+    resultado = 100 / n
+except ValueError:
+    print("Erro: valor digitado não é um número!")
+except ZeroDivisionError:
+    print("Erro: não é possível dividir por zero!")
+else:
+    print("Resultado:", resultado)
+finally:
+    print("Execução do bloco try/except finalizada.")
+
+# -----------------------------
+# 8. Importação de módulos e funções externas
+# -----------------------------
+import random
+
+numeros_aleatorios = [random.randint(1, 100) for _ in range(5)]
+print("Números aleatórios:", numeros_aleatorios)
+
+import datetime
+
+agora = datetime.datetime.now()
+print("Data e hora atual:", agora)
+
+# -----------------------------
+# 9. Classes e Orientação a Objetos básica
+# -----------------------------
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+    
+    def apresentar(self):
+        return f"Olá, meu nome é {self.nome} e tenho {self.idade} anos."
+
+p1 = Pessoa("Alice", 25)
+print(p1.apresentar())
+
+# -----------------------------
+# 10. Funções Recursivas
+# -----------------------------
+def fatorial(n):
+    """Calcula o fatorial de forma recursiva"""
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * fatorial(n - 1)
+
+print("Fatorial de 5:", fatorial(5))
+
+print("Fim da cartilha Python Intermediário! 🎉")
